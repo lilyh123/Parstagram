@@ -42,9 +42,12 @@ class MainActivity : AppCompatActivity() {
             val user = ParseUser.getCurrentUser()
             if (photoFile != null) {
                 submitPost(description, user, photoFile!!)
-            } else {
-                // Print error log message
+
                 // Show a toast to the user tot let them know to take a picture
+                Toast.makeText(this, "Picture was taken!", Toast.LENGTH_SHORT).show()
+                goToLoginActivity()
+            } else {
+                Log.e(TAG, "No picture attached")
             }
         }
 
@@ -53,7 +56,24 @@ class MainActivity : AppCompatActivity() {
             onLaunchCamera()
         }
 
-        //queryPosts()
+        findViewById<Button>(R.id.logoutBtn).setOnClickListener {
+            logOut()
+            Toast.makeText(this, "Successfully log out!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun logOut() {
+        ParseUser.logOut()
+        val currentUser = ParseUser.getCurrentUser() // this will now be null
+        val intent = Intent(this@MainActivity, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun goToLoginActivity() {
+        val intent = Intent(this@MainActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     // Send a Post object to our Parse server

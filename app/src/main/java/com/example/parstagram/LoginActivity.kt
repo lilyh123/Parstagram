@@ -44,12 +44,14 @@ class LoginActivity : AppCompatActivity() {
         user.signUpInBackground { e ->
             if (e == null) {
                 // User has successfully created a new account
-
+                Log.i(TAG, "Successfully created a new account")
                 // Navigate the user to the MainActivity
                 // Show a toast to indicate user successfully signed up for an account
+                Toast.makeText(this, "Successfully created a new account!", Toast.LENGTH_SHORT).show()
             } else {
                 // Show a toast to tell user sign up was not successful
                 e.printStackTrace()
+                Toast.makeText(this, "Error signing up", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -57,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
     private fun loginUser(username: String, password: String) {
         ParseUser.logInInBackground(username, password, ({ user, e ->
             if (user != null) {
-                Log.i(TAG, "Successfully logged in user")
+                Log.i(TAG, "Successfully logged in user!")
                 goToMainActivity()
             } else {
                 e.printStackTrace()
