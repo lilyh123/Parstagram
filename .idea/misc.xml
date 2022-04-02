@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/layout/activity_main.xml" value="0.19270833333333334" />
+        <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/layout/fragment_compose.xml" value="0.22" />
+        <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/layout/fragment_feed.xml" value="0.12952898550724637" />
+        <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/layout/item_post.xml" value="0.22" />
+        <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.22" />
         <entry key="..\:/Codepath Assignments/Parstagram/app/src/main/res/xml/fileprovider.xml" value="0.1" />
       </map>
     </option>
